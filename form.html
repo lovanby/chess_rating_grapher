@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Rating Grapher</title>
+</head>
+<body>
+<form action="/generate-chart" method="POST" target="_blank">
+
+  <!-- ================= USER 1 SECTION ================= -->
+  <fieldset>
+    <legend>Player 1</legend>
+
+    <div>
+      <label for="u1-username">Username:</label>
+      <input type="text" id="u1-username" name="user1_username" required>
+    </div>
+
+    <div>
+      <label for="u1-name">Name:</label>
+      <input type="text" id="u1-name" name="user1_name">
+    </div>
+
+    <div>
+      <label for="u1-platform">Platform:</label>
+      <select id="u1-platform" name="user1_platform" required>
+        <option value="" disabled selected>Select Platform</option>
+        <option value="lichess">lichess</option>
+        <option value="chesscom">Chess.com</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="u1-gametype">Game Type:</label>
+      <select id="u1-gametype" name="user1_gametype" required>
+        <option value="" disabled selected>Select Game Type</option>
+        <option value="rapid">Rapid</option>
+        <option value="blitz">Blitz</option>
+        <option value="bullet">Bullet</option>
+      </select>
+    </div>
+  </fieldset>
+
+
+  <!-- ================= USER 2 SECTION ================= -->
+  <fieldset>
+    <legend>Player 2</legend>
+
+    <div>
+      <label for="u2-username">Username:</label>
+      <input type="text" id="u2-username" name="user2_username" required>
+    </div>
+
+    <div>
+      <label for="u2-name">Name:</label>
+      <input type="text" id="u2-name" name="user2_name">
+    </div>
+
+    <div>
+      <label for="u2-platform">Platform:</label>
+      <select id="u2-platform" name="user2_platform" required>
+        <option value="" disabled selected>Select Platform</option>
+        <option value="lichess">lichess</option>
+        <option value="chesscom">Chess.com</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="u2-gametype">Game Type:</label>
+      <select id="u2-gametype" name="user2_gametype" required>
+        <option value="" disabled selected>Select Game Type</option>
+        <option value="rapid">Rapid</option>
+        <option value="blitz">Blitz</option>
+        <option value="bullet">Bullet</option>
+      </select>
+    </div>
+  </fieldset>
+
+
+  <!-- ================= GLOBAL SETTINGS ================= -->
+  <fieldset>
+    <legend>Output Configuration</legend>
+
+    <div>
+      <label for="chart-type">Chart Type:</label>
+      <select id="chart-type" name="chart_type" required>
+        <option value="" disabled selected>Select Chart Type</option>
+        <option value="date">By date</option>
+        <option value="games">By games</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <!-- Submit Button -->
+  <div style="margin-top: 15px;">
+    <button type="submit">Generate!</button>
+  </div>
+
+</form>
+</body>
+</html>
