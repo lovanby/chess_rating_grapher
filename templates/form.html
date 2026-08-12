@@ -11,6 +11,7 @@
 
     <fieldset class="player-block">
       <legend>Player 1</legend>
+      <button type="button" class="remove-btn">Remove Player</button>
       <div>
         <label>Username:</label>
         <input type="text" name="user1_username" required>
@@ -84,6 +85,13 @@
        let newBlock = lastBlock.cloneNode(true);
        container.appendChild(newBlock);
        renumberPlayers();
+  });
+  document.getElementById("players-container").addEventListener("click", function(event) {
+    if (event.target.classList.contains("remove-btn")) {
+    let block = event.target.closest(".player-block");
+    block.remove();
+    renumberPlayers();
+    }
   });
 </script>
 
