@@ -1,23 +1,35 @@
-README
+# Chess Rating Grapher
 
-This python & Flask tool is for generating .png file charts of player chess 
-ratings on either lichess.org or Chess.com.
-Currently, it can support up to two players, but this will be expanded in the
-future. There are three game types selectable, rapid/blitz/bullet. More are planned 
-to be added in the future as well.
+A Python & Flask tool for generating `.png` chart of chess rating progress
+on [Lichess.org](https://lichess.org) and [Chess.com](https://chess.com).
 
-No API key or log-ins are required as it uses freely accessible data from both websites.
+No API key or login is needed as it uses each site's freely accessible public data.
 
-The project requires:
+## Features
 
-pip install requests matplotlib flask
+- Compare up to **two players** at once (support for more is planned)
+- Choose game type per player: **rapid / blitz / bullet** (support for more is planned)
+- Plot by **date** or by **games played**
+- View the resulting chart in browser or download as PNG
 
-Running main.py and going to http://127.0.0.1:5000 will bring up a form to fill
-in with player details.
+## Usage
 
-I've just made this tool for fun as I wasn't aware of any others like it. I've 
-published it in case anyone has thought the same.
+Setup:
+```bash
+pip install -r requirements.txt
+```
 
-Author:
 
-Eden Li (lovanby on GitHub)
+Run the app:
+
+```bash
+python main.py
+```
+
+Then open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser, fill in player details, and generate a chart.
+
+## About
+
+I made this for fun as I wasn't aware of a tool like it, so I'm sharing it in case anyone else wants it too.
+
+**Author:** Eden Li ([@lovanby](https://github.com/lovanby))
