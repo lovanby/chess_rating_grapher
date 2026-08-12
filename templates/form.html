@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Rating Grapher</title>
+</head>
+<body>
+<form action="/generate-chart" method="POST" target="_blank">
+
+  <div id="players-container">
+
+    <fieldset class="player-block">
+      <legend>Player 1</legend>
+      <div>
+        <label>Username:</label>
+        <input type="text" name="user1_username" required>
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" name="user1_name">
+      </div>
+      <div>
+        <label>Platform:</label>
+        <select name="user1_platform" required>
+          <option value="" disabled selected>Select Platform</option>
+          <option value="lichess">lichess</option>
+          <option value="chesscom">Chess.com</option>
+        </select>
+      </div>
+      <div>
+        <label>Game Type:</label>
+        <select name="user1_gametype" required>
+          <option value="" disabled selected>Select Game Type</option>
+          <option value="rapid">Rapid</option>
+          <option value="blitz">Blitz</option>
+          <option value="bullet">Bullet</option>
+        </select>
+      </div>
+    </fieldset>
+
+  </div>
+
+
+  <button type="button" id="add-btn">Add Player</button>
+
+  <!-- ================= GLOBAL SETTINGS ================= -->
+  <fieldset>
+    <legend>Output Configuration</legend>
+
+    <div>
+      <label for="chart-type">Chart Type:</label>
+      <select id="chart-type" name="chart_type" required>
+        <option value="" disabled selected>Select Chart Type</option>
+        <option value="date">By date</option>
+        <option value="games">By games</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <!-- Submit Button -->
+  <div style="margin-top: 15px;">
+    <button type="submit">Generate!</button>
+  </div>
+</form>
+
+<script>
+  document.getElementById("add-btn").addEventListener("click", function() {
+       // this code runs every time the button is clicked
+       let container = document.getElementById("players-container");
+       let lastBlock = container.querySelector(".player-block:last-of-type);
+       let newBlock = lastBlock.cloneNode(true);
+       container.appendChild(newBlock);
+  });
+</script>
+
+</body>
+</html>

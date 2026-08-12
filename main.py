@@ -142,7 +142,7 @@ def plot_ratings(players: dict, chart_type, window: int = 10):
     chart_type: "date" or "games"
     window: rolling average window size (in data points)
     """
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10.0, 6.0))
     try:
 
         # Give each player a consistent colour for raw + smoothed lines
