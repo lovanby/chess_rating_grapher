@@ -64,12 +64,26 @@
 </form>
 
 <script>
+  function renumberPlayers() {
+    let blocks = document.querySelectorAll(".player-block");
+    blocks.forEach(function(block, index) {
+        let number = index + 1; // index is 0-based, players are 1-based
+
+        block.querySelector("legend").textContent = "Player " + number;
+
+        let fields = block.querySelectorAll("input, select");
+        fields.forEach(function(field) {
+            field.name = field.name.replace(/user\d+_/, "user" + number + "_");
+        });
+    });
+}
   document.getElementById("add-btn").addEventListener("click", function() {
        // this code runs every time the button is clicked
        let container = document.getElementById("players-container");
-       let lastBlock = container.querySelector(".player-block:last-of-type);
+       let lastBlock = container.querySelector(".player-block:last-of-type");
        let newBlock = lastBlock.cloneNode(true);
        container.appendChild(newBlock);
+       renumberPlayers();
   });
 </script>
 
