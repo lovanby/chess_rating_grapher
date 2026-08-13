@@ -86,13 +86,18 @@
        container.appendChild(newBlock);
        renumberPlayers();
   });
-  document.getElementById("players-container").addEventListener("click", function(event) {
+document.getElementById("players-container").addEventListener("click", function(event) {
     if (event.target.classList.contains("remove-btn")) {
-    let block = event.target.closest(".player-block");
-    block.remove();
-    renumberPlayers();
+        let blocks = document.querySelectorAll(".player-block");
+        if (blocks.length > 1) {
+            let block = event.target.closest(".player-block");
+            block.remove();
+            renumberPlayers();
+        } else {
+            alert("There must be at least one player.");
+        }
     }
-  });
+});
 </script>
 
 </body>
